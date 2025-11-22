@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Alert, AlertDescription } from '@/components/ui/alert'
+import FunnelCollapseSection from '@/components/FunnelCollapseSection'
 import { Badge } from '@/components/ui/badge'
 import Navigation from '@/components/Navigation'
 import QueryCustomizer from '@/components/QueryCustomizer'
@@ -694,136 +695,132 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Funnel Collapse Visualization */}
-              <div className="my-16 p-8 md:p-12 bg-white border-2 border-slate-300 rounded-lg">
-                <h3 className="font-space-mono font-bold text-2xl md:text-3xl text-center text-slate-950 mb-12">
-                  The Funnel Collapses: <span className="text-slate-950">6 Steps</span> → <span className="text-slate-950">3 Steps</span>
+              {/* Funnel Collapse Visualization - Simple & Visual */}
+              <div className="my-16 p-8 md:p-12 bg-white border-2 border-slate-300 rounded-lg shadow-sm">
+                <h3 className="font-space-mono font-bold text-2xl md:text-3xl text-center text-slate-950 mb-4">
+                  The Funnel Collapses
                 </h3>
+                <p className="text-center text-slate-600 mb-12 text-lg">
+                  <span className="text-slate-950 font-bold">6 Steps</span> → <span className="text-slate-950 font-bold">3 Steps</span>
+                </p>
                 
-                <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
-                  {/* Left Side - Traditional Funnel (Fading) */}
+                <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+                  {/* Traditional Funnel */}
                   <div className="space-y-4">
                     <div className="text-center mb-6">
-                      <h4 className="font-space-mono font-bold text-lg text-slate-950 uppercase mb-2">Traditional Web Funnel</h4>
-                      <p className="text-sm text-slate-600 font-semibold">⚠ Obsolete & Fading</p>
+                      <span className="inline-block px-4 py-2 rounded-full bg-slate-200 text-slate-600 font-space-mono text-sm font-bold mb-3">
+                        ⚠ Obsolete & Fading
+                      </span>
+                      <h4 className="font-space-mono font-bold text-lg text-slate-950 uppercase">Traditional Web Funnel</h4>
                     </div>
                     
-                    <div className="relative">
-                      <div className="bg-white border-2 border-slate-300 rounded-xl p-4 opacity-90 mb-3">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center flex-shrink-0">
-                            <Megaphone className="w-6 h-6 text-slate-600" />
-                          </div>
-                          <div>
-                            <span className="font-space-mono text-xs text-slate-500">STEP 1</span>
-                            <p className="font-open-sans font-semibold text-slate-700">Awareness</p>
-                          </div>
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="w-full max-w-xs bg-white border-2 border-slate-300 rounded-xl p-4 flex items-center gap-4">
+                        <div className="w-14 h-14 bg-slate-200 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Megaphone className="w-7 h-7 text-slate-600" />
+                        </div>
+                        <div>
+                          <span className="font-space-mono text-xs text-slate-500">STEP 1</span>
+                          <p className="font-open-sans font-semibold text-slate-700">Awareness</p>
                         </div>
                       </div>
-                      <div className="text-center text-slate-400 text-2xl">↓</div>
-                      <div className="bg-white border-2 border-slate-300 rounded-xl p-4 opacity-80 mb-3">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center flex-shrink-0">
-                            <Search className="w-6 h-6 text-slate-600" />
-                          </div>
-                          <div>
-                            <span className="font-space-mono text-xs text-slate-500">STEP 2</span>
-                            <p className="font-open-sans font-semibold text-slate-700">Search</p>
-                          </div>
+                      <div className="text-slate-400 text-2xl">↓</div>
+                      
+                      <div className="w-full max-w-xs bg-white border-2 border-slate-300 rounded-xl p-4 flex items-center gap-4 opacity-90">
+                        <div className="w-14 h-14 bg-slate-200 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Search className="w-7 h-7 text-slate-600" />
+                        </div>
+                        <div>
+                          <span className="font-space-mono text-xs text-slate-500">STEP 2</span>
+                          <p className="font-open-sans font-semibold text-slate-700">Search</p>
                         </div>
                       </div>
-                      <div className="text-center text-slate-400 text-2xl">↓</div>
-                      <div className="bg-white border-2 border-slate-300 rounded-xl p-4 opacity-70 mb-3">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center flex-shrink-0">
-                            <Globe className="w-6 h-6 text-slate-600" />
-                          </div>
-                          <div>
-                            <span className="font-space-mono text-xs text-slate-500">STEP 3</span>
-                            <p className="font-open-sans font-semibold text-slate-700">Visit</p>
-                          </div>
+                      <div className="text-slate-400 text-2xl">↓</div>
+                      
+                      <div className="w-full max-w-xs bg-white border-2 border-slate-300 rounded-xl p-4 flex items-center gap-4 opacity-80">
+                        <div className="w-14 h-14 bg-slate-200 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Globe className="w-7 h-7 text-slate-600" />
+                        </div>
+                        <div>
+                          <span className="font-space-mono text-xs text-slate-500">STEP 3</span>
+                          <p className="font-open-sans font-semibold text-slate-700">Visit</p>
                         </div>
                       </div>
-                      <div className="text-center text-slate-400 text-2xl">↓</div>
-                      <div className="bg-white border-2 border-slate-300 rounded-xl p-4 opacity-60 mb-3">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center flex-shrink-0">
-                            <Eye className="w-6 h-6 text-slate-600" />
-                          </div>
-                          <div>
-                            <span className="font-space-mono text-xs text-slate-500">STEP 4</span>
-                            <p className="font-open-sans font-semibold text-slate-700">Read</p>
-                          </div>
+                      <div className="text-slate-400 text-2xl">↓</div>
+                      
+                      <div className="w-full max-w-xs bg-white border-2 border-slate-300 rounded-xl p-4 flex items-center gap-4 opacity-70">
+                        <div className="w-14 h-14 bg-slate-200 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Eye className="w-7 h-7 text-slate-600" />
+                        </div>
+                        <div>
+                          <span className="font-space-mono text-xs text-slate-500">STEP 4</span>
+                          <p className="font-open-sans font-semibold text-slate-700">Read</p>
                         </div>
                       </div>
-                      <div className="text-center text-slate-400 text-2xl">↓</div>
-                      <div className="bg-white border-2 border-slate-300 rounded-xl p-4 opacity-50 mb-3">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center flex-shrink-0">
-                            <Scale className="w-6 h-6 text-slate-600" />
-                          </div>
-                          <div>
-                            <span className="font-space-mono text-xs text-slate-500">STEP 5</span>
-                            <p className="font-open-sans font-semibold text-slate-700">Compare</p>
-                          </div>
+                      <div className="text-slate-400 text-2xl">↓</div>
+                      
+                      <div className="w-full max-w-xs bg-white border-2 border-slate-300 rounded-xl p-4 flex items-center gap-4 opacity-60">
+                        <div className="w-14 h-14 bg-slate-200 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Scale className="w-7 h-7 text-slate-600" />
+                        </div>
+                        <div>
+                          <span className="font-space-mono text-xs text-slate-500">STEP 5</span>
+                          <p className="font-open-sans font-semibold text-slate-700">Compare</p>
                         </div>
                       </div>
-                      <div className="text-center text-slate-400 text-2xl">↓</div>
-                      <div className="bg-white border-2 border-slate-300 rounded-xl p-4 opacity-40 mb-3">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center flex-shrink-0">
-                            <ShoppingCart className="w-6 h-6 text-slate-600" />
-                          </div>
-                          <div>
-                            <span className="font-space-mono text-xs text-slate-500">STEP 6</span>
-                            <p className="font-open-sans font-semibold text-slate-700">Buy</p>
-                          </div>
+                      <div className="text-slate-400 text-2xl">↓</div>
+                      
+                      <div className="w-full max-w-xs bg-white border-2 border-slate-300 rounded-xl p-4 flex items-center gap-4 opacity-50">
+                        <div className="w-14 h-14 bg-slate-200 rounded-full flex items-center justify-center flex-shrink-0">
+                          <ShoppingCart className="w-7 h-7 text-slate-600" />
+                        </div>
+                        <div>
+                          <span className="font-space-mono text-xs text-slate-500">STEP 6</span>
+                          <p className="font-open-sans font-semibold text-slate-700">Buy</p>
                         </div>
                       </div>
                     </div>
                   </div>
                   
-                  {/* Right Side - AI Funnel (Bright) */}
+                  {/* AI Funnel */}
                   <div className="space-y-4">
                     <div className="text-center mb-6">
-                      <h4 className="font-space-mono font-bold text-lg text-slate-950 uppercase mb-2">AI-Powered Funnel</h4>
-                      <p className="text-sm text-slate-600 font-semibold">✓ Fast, Direct, Now</p>
+                      <span className="inline-block px-4 py-2 rounded-full bg-slate-950 text-white font-space-mono text-sm font-bold mb-3">
+                        ✨ Fast, Direct, Now
+                      </span>
+                      <h4 className="font-space-mono font-bold text-lg text-slate-950 uppercase">AI-Powered Funnel</h4>
                     </div>
                     
-                    <div className="relative">
-                      <div className="bg-white border-2 border-slate-950 rounded-lg p-6 mb-4">
-                        <div className="flex items-center gap-4">
-                          <div className="w-14 h-14 bg-slate-950 rounded-full flex items-center justify-center flex-shrink-0">
-                            <MessageCircle className="w-7 h-7 text-white" />
-                          </div>
-                          <div>
-                            <span className="font-space-mono text-xs text-slate-600 font-bold">STEP 1</span>
-                            <p className="font-open-sans font-bold text-lg text-slate-950">Prompt</p>
-                          </div>
+                    <div className="flex flex-col items-center gap-4">
+                      <div className="w-full max-w-xs bg-slate-950 border-2 border-slate-950 rounded-xl p-5 flex items-center gap-4 shadow-sm">
+                        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                          <MessageCircle className="w-8 h-8 text-slate-950" />
+                        </div>
+                        <div>
+                          <span className="font-space-mono text-xs text-slate-400">STEP 1</span>
+                          <p className="font-open-sans font-bold text-lg text-white">Prompt</p>
                         </div>
                       </div>
-                      <div className="text-center text-slate-950 text-3xl font-bold">↓</div>
-                      <div className="bg-white border-2 border-slate-950 rounded-lg p-6 mb-4">
-                        <div className="flex items-center gap-4">
-                          <div className="w-14 h-14 bg-slate-950 rounded-full flex items-center justify-center flex-shrink-0">
-                            <BrainCircuit className="w-7 h-7 text-white" />
-                          </div>
-                          <div>
-                            <span className="font-space-mono text-xs text-slate-600 font-bold">STEP 2</span>
-                            <p className="font-open-sans font-bold text-lg text-slate-950">AI Recommendation</p>
-                          </div>
+                      <div className="text-slate-950 text-3xl font-bold">↓</div>
+                      
+                      <div className="w-full max-w-xs bg-slate-950 border-2 border-slate-950 rounded-xl p-5 flex items-center gap-4 shadow-sm">
+                        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                          <BrainCircuit className="w-8 h-8 text-slate-950" />
+                        </div>
+                        <div>
+                          <span className="font-space-mono text-xs text-slate-400">STEP 2</span>
+                          <p className="font-open-sans font-bold text-lg text-white">AI Recommendation</p>
                         </div>
                       </div>
-                      <div className="text-center text-slate-950 text-3xl font-bold">↓</div>
-                      <div className="bg-white border-2 border-slate-950 rounded-lg p-6">
-                        <div className="flex items-center gap-4">
-                          <div className="w-14 h-14 bg-slate-950 rounded-full flex items-center justify-center flex-shrink-0">
-                            <Check className="w-7 h-7 text-white" />
-                          </div>
-                          <div>
-                            <span className="font-space-mono text-xs text-slate-600 font-bold">STEP 3</span>
-                            <p className="font-open-sans font-bold text-lg text-slate-950">Purchase</p>
-                          </div>
+                      <div className="text-slate-950 text-3xl font-bold">↓</div>
+                      
+                      <div className="w-full max-w-xs bg-slate-950 border-2 border-slate-950 rounded-xl p-5 flex items-center gap-4 shadow-sm">
+                        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                          <Check className="w-8 h-8 text-slate-950" />
+                        </div>
+                        <div>
+                          <span className="font-space-mono text-xs text-slate-400">STEP 3</span>
+                          <p className="font-open-sans font-bold text-lg text-white">Purchase</p>
                         </div>
                       </div>
                     </div>
@@ -853,67 +850,66 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-
-              {/* Organizational Transformation */}
-              <div className="bg-slate-50 border-2 border-slate-300 p-6 md:p-8 rounded-lg mb-12">
-                <h4 className="font-space-mono font-bold text-xl text-slate-950 mb-6 text-center">Inside Organizations: AI Agents Automate Everything</h4>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
-                      <PenTool className="w-6 h-6 text-white" />
-                    </div>
-                    <p className="text-sm font-open-sans text-slate-700">Writing</p>
-                  </div>
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
-                      <Search className="w-6 h-6 text-white" />
-                    </div>
-                    <p className="text-sm font-open-sans text-slate-700">Research</p>
-                  </div>
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
-                      <LineChart className="w-6 h-6 text-white" />
-                    </div>
-                    <p className="text-sm font-open-sans text-slate-700">Analysis</p>
-                  </div>
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
-                      <Workflow className="w-6 h-6 text-white" />
-                    </div>
-                    <p className="text-sm font-open-sans text-slate-700">Operations</p>
-                  </div>
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
-                      <Briefcase className="w-6 h-6 text-white" />
-                    </div>
-                    <p className="text-sm font-open-sans text-slate-700">Planning</p>
-                  </div>
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
-                      <BarChart3 className="w-6 h-6 text-white" />
-                    </div>
-                    <p className="text-sm font-open-sans text-slate-700">Reporting</p>
-                  </div>
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
-                      <FileCheck className="w-6 h-6 text-white" />
-                    </div>
-                    <p className="text-sm font-open-sans text-slate-700">Approvals</p>
-                  </div>
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
-                      <Bot className="w-6 h-6 text-white" />
-                    </div>
-                    <p className="text-sm font-open-sans text-slate-700">+ 1000s more</p>
-                  </div>
-                </div>
-                <p className="text-center font-open-sans text-base text-slate-600 italic">
-                  AI agents now handle thousands of micro tasks per day
-                </p>
-              </div>
-              
             </div>
           </section>
+
+          {/* Organizational Transformation */}
+          <div className="bg-slate-50 border-2 border-slate-300 p-6 md:p-8 rounded-lg mb-12">
+            <h4 className="font-space-mono font-bold text-xl text-slate-950 mb-6 text-center">Inside Organizations: AI Agents Automate Everything</h4>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
+                  <PenTool className="w-6 h-6 text-white" />
+                </div>
+                <p className="text-sm font-open-sans text-slate-700">Writing</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
+                  <Search className="w-6 h-6 text-white" />
+                </div>
+                <p className="text-sm font-open-sans text-slate-700">Research</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
+                  <LineChart className="w-6 h-6 text-white" />
+                </div>
+                <p className="text-sm font-open-sans text-slate-700">Analysis</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
+                  <Workflow className="w-6 h-6 text-white" />
+                </div>
+                <p className="text-sm font-open-sans text-slate-700">Operations</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
+                  <Briefcase className="w-6 h-6 text-white" />
+                </div>
+                <p className="text-sm font-open-sans text-slate-700">Planning</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
+                  <BarChart3 className="w-6 h-6 text-white" />
+                </div>
+                <p className="text-sm font-open-sans text-slate-700">Reporting</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
+                  <FileCheck className="w-6 h-6 text-white" />
+                </div>
+                <p className="text-sm font-open-sans text-slate-700">Approvals</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-slate-950 rounded-full flex items-center justify-center mb-2">
+                  <Bot className="w-6 h-6 text-white" />
+                </div>
+                <p className="text-sm font-open-sans text-slate-700">+ 1000s more</p>
+              </div>
+            </div>
+            <p className="text-center font-open-sans text-base text-slate-600 italic">
+              AI agents now handle thousands of micro tasks per day
+            </p>
+          </div>
 
           {/* What We Do */}
           <section className="py-16 mb-12 border-b border-slate-200 mx-auto">

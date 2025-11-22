@@ -19,7 +19,8 @@ export default function ContactPage() {
   const handleSubmit = (e) => {
     e.preventDefault()
     // Post the form to our backend API
-    fetch('/api/send-email', {
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+    fetch(`${API_URL}/api/send-email`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
@@ -34,7 +35,7 @@ export default function ContactPage() {
       })
       .catch((err) => {
         console.error('Failed to send contact message', err)
-        alert('Sorry — something went wrong sending your message. Please try again or email us directly at hello@govisibi.ai')
+        alert('Sorry — something went wrong sending your message. Please try again or email us directly at info@govisibi.ai')
       })
   }
 
